@@ -4,7 +4,7 @@ def prime_Sieve(n):
     
     m = int(n ** 0.5)                        # 소수가 아니라면 약수가 2와 sqrt(N) 사이에 있다.
     for i in range(4, n, 2):
-        sieve[j] = False                     # 2가 아닌 2의 배수를 전부 False(합성수)로 판단
+        sieve[i] = False                     # 2가 아닌 2의 배수를 전부 False(합성수)로 판단
     
     for i in range(3, m + 1, 2):             # i는 3부터 홀수만 따짐
         
