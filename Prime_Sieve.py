@@ -13,6 +13,7 @@ def prime_Sieve(n):
                 sieve[j] = False             # 2의 배수를 이미 제거했으므로 3i, 5i, 7i...만 제거
 
     # 소수 목록 산출
-    return [i for i in range(2, n) if sieve[i] == True]
+    return [2] + [i for i in range(3, n, 2) if sieve[i] == True]
+
   
 # https://ko.wikipedia.org/wiki/%EC%97%90%EB%9D%BC%ED%86%A0%EC%8A%A4%ED%85%8C%EB%84%A4%EC%8A%A4%EC%9D%98_%EC%B2%B4#cite_note-1
