@@ -14,7 +14,8 @@ def prime_Sieve(n):
         if sieve[i] == True:                 # i가 소수 일때는
             for j in range(5 * i, n, 6 * i): # i가 아닌 i의 배수들을 전부 False(합성수)로 판단
                 sieve[j] = False
-                sieve[min(n - 1, j + 2 * i)] = False             # 2, 3의 배수를 이미 제거했으므로 5i, 7i, 11i, 13i, ...만 제거
+            for j in range(7 * i, n, 6 * i):
+                sieve[j] = False             # 2, 3의 배수를 이미 제거했으므로 5i, 7i, 11i, 13i, ...만 제거
 
     # 소수 목록 산출
     return [2] + [i for i in range(3, n, 2) if sieve[i] == True]
